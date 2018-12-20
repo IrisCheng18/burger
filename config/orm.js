@@ -8,15 +8,15 @@ var orm = {
             cb(data);
         });
     },
-    insertOne: function (tableName, objVals, cb) {
-        connection.query('INSERT INTO ?? SET ?', [tableName, objVals], function (err, data) {
+    insertOne: function (tableName, objColVals, cb) {
+        connection.query('INSERT INTO ?? SET ?', [tableName, objColVals], function (err, data) {
             if (err) throw err;
 
             cb(data);
         });
     },
-    updateOne: function (tableName, objVals, objCondition, cb) {
-        connection.query('UPDATE ?? SET ? WHERE ?', [tableName, objVals, objCondition], function(err, data) {
+    updateOne: function (tableName, objColVals, objCondition, cb) {
+        connection.query('UPDATE ?? SET ? WHERE ?', [tableName, objColVals, objCondition], function(err, data) {
             if (err) throw err;
 
             cb(data);
@@ -34,4 +34,5 @@ var orm = {
 //     console.log(data);
 // });
 
+// Export the orm object for the model (burger.js).
 module.exports = orm;
