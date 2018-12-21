@@ -1,0 +1,13 @@
+<div class="container">
+    <h1>Hello, Burger Lovers!!!</h1>
+
+    <img src="hamburger.jpg" height="200" width="200">
+    <ul>
+        {{#each burgers}}
+        <li>
+            <p>{{this.burger_name}}</p>
+            <button data-id="{{this.id}}" class="devoured">devoured</button>
+        </li>
+        {{/each}}
+    </ul>
+</div>

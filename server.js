@@ -8,10 +8,18 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
 // Set Handlebars
+// var exphbs = require("express-handlebars");
 var exphbs = require("express-handlebars");
 
-app.engine("handlebars", exphbs({defaultLayout: "main"}));
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
+// app.engine("handlebars", exphbs({defaultLayout: "main"}));
+// app.set("view engine", "handlebars");
+
+// Serve static content for the app from the "public" directory in the application directory.
+app.use(express.static("public"));
+// Serve static content for the images to be accessed from "public/assets/img" directory in the application directory.
+app.use(express.static("public/assets/img"));
 
 // Import routes and give the server access to them
 var routes = require("./controllers/burgers_controller.js");
