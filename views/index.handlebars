@@ -2,12 +2,19 @@
     <h1>Hello, Burger Lovers!!!</h1>
 
     <img src="hamburger.jpg" height="200" width="200">
-    <ul>
-        {{#each burgers}}
-        <li>
-            <p>{{this.burger_name}}</p>
-            <button data-id="{{this.id}}" class="devoured">devoured</button>
-        </li>
-        {{/each}}
-    </ul>
-</div>
+    <div class="row">
+        <div class="col-4">
+            <ul class="list-group">
+                <li class="list-group-item active">Burgers</li>
+                {{#each burgers}}
+                <li class="list-group-item">
+                    {{this.burger_name}}
+                    <button data-id="{{this.id}}" class="devoured">devoured</button>
+                </li>
+
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+
+    
