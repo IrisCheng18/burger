@@ -20,8 +20,6 @@ var orm = {
     // An example of objColVals would be {burger_name: "cheeseburger", devoured: true}
     // An example of objCondition would be {id : 4}
     updateOne: function (tableName, objColVals, objCondition, cb) {
-        console.log(objColVals);
-        console.log(objCondition);
         connection.query('UPDATE ?? SET ? WHERE ?', [tableName, objColVals, objCondition], function(err, data) {
             if (err) throw err;
 

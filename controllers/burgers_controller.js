@@ -10,6 +10,7 @@ router.get("/", function (req, res) {
             burgers: data
         };
 
+        // console.log(data);
         res.render("index", hbsObject);
     });
 });
@@ -22,6 +23,7 @@ router.post("/api/burger", function(req, res) {
 
 router.put("/api/burger/:id", function(req, res) {
     var objCondition = {id: req.params.id}
+    // console.log(req.body);
     burger.updateOne(req.body, objCondition, function(data) {
         res.json(data);
     });
